@@ -55,7 +55,7 @@
 
     <div class="section" id="contact">
       <h3>Contact Me</h3>
-      <form id="contact-form">
+      <form id="contact-form" action="https://formspree.io/f/mkgqvwnq" method="POST">
         <label for="name-input">Name:</label>
         <input type="text" id="name-input" name="name" placeholder="Your name" required>
 
@@ -66,10 +66,8 @@
         <textarea id="message-input" name="message" rows="4" placeholder="Write your message" required></textarea>
 
         <button type="submit" class="submit-btn">Send Message</button>
-      <form action="https://formspree.io/f/mkgqvwnq" method="POST">
-  <!-- form fields -->
-</form>
-
+      </form>
+      <p id="form-status" style="color:var(--accent);"></p>
     </div>
 
     <div class="footer">Customize links and certificates in the script section. Hosting: GitHub Pages, Netlify, or Vercel.</div>
@@ -93,16 +91,6 @@
     document.getElementById('github-btn').href = data.github;
     document.getElementById('linkedin-btn').href = data.linkedin;
     document.getElementById('facebook-btn').href = data.facebook;
-
-    document.getElementById('contact-form').addEventListener('submit', function(e){
-      e.preventDefault();
-      const name = document.getElementById('name-input').value;
-      const email = document.getElementById('email-input').value;
-      const message = document.getElementById('message-input').value;
-      document.getElementById('form-status').textContent = `Thank you, ${name}! Your message has been received.`;
-      this.reset();
-    });
   </script>
 </body>
-
 </html>

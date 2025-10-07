@@ -1,97 +1,48 @@
-<!doctype html>
-<html lang="bn">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Forhad Reza — Portfolio</title>
-  <meta name="description" content="Forhad Reza — Personal portfolio with social links, GitHub, certificates, and contact form">
-  <style>
-    :root{--bg:#0f1724;--card:#0b1220;--accent:#06b6d4;--muted:#94a3b8;--glass: rgba(255,255,255,0.03)}
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Bangla MN','Noto Sans Bengali',sans-serif;background:linear-gradient(180deg,#071026 0%, #0b1220 100%);color:#e6eef8;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
-    .container{width:100%;max-width:900px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-radius:14px;padding:28px;box-shadow:0 10px 30px rgba(2,6,23,0.6);backdrop-filter:blur(6px)}
-    .head{display:flex;gap:18px;align-items:center}
-    .avatar{width:110px;height:110px;border-radius:16px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:24px}
-    h1{margin:0;font-size:22px}
-    p.lead{margin:6px 0 0;color:var(--muted)}
-    .links{margin-top:18px;display:flex;flex-wrap:wrap;gap:10px}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;text-decoration:none;color:inherit;background:var(--glass);border:1px solid rgba(255,255,255,0.04)}
-    .btn svg{width:18px;height:18px;opacity:0.95}
-    .section{margin-top:22px;padding:14px;border-radius:10px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03)}
-    .footer{margin-top:18px;color:var(--muted);font-size:13px}
-    input, textarea{width:100%;padding:10px;margin-top:6px;margin-bottom:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.2);background:var(--card);color:#e6eef8}
-    button.submit-btn{padding:10px 16px;background:var(--accent);color:#fff;border:none;border-radius:8px;cursor:pointer}
-    @media(max-width:600px){.head{flex-direction:column;align-items:flex-start}.avatar{width:90px;height:90px}}
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <div class="head">
-      <div class="avatar" id="avatar">FR</div>
-      <div>
-        <h1 id="name">Forhad Reza</h1>
-        <p class="lead" id="role">Student • Math enthusiast • Aspiring pilot</p>
-        <div class="links">
-          <a class="btn" id="github-btn" href="#" target="_blank">GitHub</a>
-          <a class="btn" id="linkedin-btn" href="#" target="_blank">LinkedIn</a>
-          <a class="btn" id="facebook-btn" href="#" target="_blank">Facebook</a>
+  <nav class="nav">
+    <div class="logo">Forhad Reza</div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="biodata.html">Biodata</a></li>
+      <li><a href="achievements.html">Achievements</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="main">
+    <section class="hero">
+      <div class="card" id="card">
+        <img src="forhad.jpg" alt="Forhad Reza" class="avatar" />
+        <h1 class="name">Forhad Reza</h1>
+        <p class="role">Either you run the day or the day runs you❤️</p>
+
+        <!-- Card social links with GitHub -->
+        <div class="social">
+          <a href="https://www.facebook.com/forhad.reja.7568596" target="_blank">Facebook</a>
+          <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+          <a href="http://linkedin.com/feed/" target="_blank">LinkedIn</a>
+          <a href="https://www.youtube.com/@forhadreza0" target="_blank">YouTube</a>
+          <a href="https://github.com/forhadreza8373" target="_blank">GitHub</a>
+        </div>
+
+        <div class="actions">
+          <a class="btn" href="biodata.html">View Biodata</a>
+          <a class="btn outline" href="achievements.html">Achievements</a>
         </div>
       </div>
-    </div>
+    </section>
+  </main>
 
-    <div class="section" id="bio-section">
-      <h3>Portfolio / Bio</h3>
-      <p id="bio">Ami ekjon 11th grade student. Math ami bhalo basi, coding ar portfolio nite chai. Ekhane amar social link ar GitHub ache.</p>
-    </div>
-
-    <div class="section" id="certificates">
-      <h3>Certificates</h3>
-      <ul id="cert-list">
-        <li>Mathematics Olympiad Participation - 2024</li>
-        <li>Python Programming Basics - 2025</li>
-        <li>Science Fair Certificate - 2025</li>
-      </ul>
-    </div>
-
-    <div class="section" id="contact">
-      <h3>Contact Me</h3>
-      <form id="contact-form" action="https://formspree.io/f/mkgqvwnq" method="POST">
-        <label for="name-input">Name:</label>
-        <input type="text" id="name-input" name="name" placeholder="Your name" required>
-
-        <label for="email-input">Email:</label>
-        <input type="email" id="email-input" name="email" placeholder="Your email" required>
-
-        <label for="message-input">Message:</label>
-        <textarea id="message-input" name="message" rows="4" placeholder="Write your message" required></textarea>
-
-        <button type="submit" class="submit-btn">Send Message</button>
-      </form>
-      <p id="form-status" style="color:var(--accent);"></p>
-    </div>
-
-    <div class="footer">Customize links and certificates in the script section. Hosting: GitHub Pages, Netlify, or Vercel.</div>
-  </div>
-
-  <script>
-    const data = {
-      name: 'Forhad Reza',
-      role: 'Student • Math enthusiast ',
-      bio: 'Ami ekjon 11th grade student. Math ami bhalo basi, coding ar portfolio nite chai. Ekhane amar social link ar GitHub ache.',
-      initials: 'FR',
-      github: 'https://github.com/your-username',
-      linkedin: 'https://www.linkedin.com/in/your-profile',
-      facebook: 'https://www.facebook.com/share/166sbJ9bsk/'
-    }
-
-    document.getElementById('name').textContent = data.name;
-    document.getElementById('role').textContent = data.role;
-    document.getElementById('bio').textContent = data.bio;
-    document.getElementById('avatar').textContent = data.initials;
-    document.getElementById('github-btn').href = data.github;
-    document.getElementById('linkedin-btn').href = data.linkedin;
-    document.getElementById('facebook-btn').href = data.facebook;
-  </script>
+  <footer class="footer">
+    <div>© 2025 Forhad Reza</div>
+  </footer>
 </body>
 </html>
-

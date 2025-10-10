@@ -56,5 +56,15 @@
 
   <!-- Floating Corner Logo -->
   <img src="logo.png" alt="Forhad Reza" class="corner-logo" />
+
+  <!-- JS to hide intro after animation -->
+  <script>
+    window.addEventListener("load", () => {
+      const intro = document.getElementById("logo-intro");
+      setTimeout(() => {
+        intro.style.display = "none";
+      }, 2800); // same as animation duration
+    });
+  </script>
 </body>
 </html>

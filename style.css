@@ -197,19 +197,52 @@ body {
 
 /* ===== Mobile Responsive ===== */
 @media (max-width: 768px) {
-  .nav, .sub-nav {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
+  .nav, .sub-nav { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .nav-links { flex-direction: column; width: 100%; }
+  .card { width: 90%; height: auto; padding: 20px; }
+}
 
-  .nav-links {
-    flex-direction: column;
-    width: 100%;
-  }
+/* === Logo Intro Animation === */
+#logo-intro {
+  position: fixed;
+  inset: 0;
+  background: #0b1220;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeOut 2.8s ease forwards 2.2s;
+}
 
-  .card {
-    width: 90%;
-    height: auto;
-    padding: 20px;
-  }
+#logo-intro img {
+  width: 160px;
+  height: auto;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: logoFadeIn 2s ease forwards;
+}
+
+@keyframes logoFadeIn {
+  0% { opacity: 0; transform: scale(0.6) rotate(-10deg); filter: blur(4px); }
+  50% { opacity: 1; transform: scale(1.05) rotate(3deg); filter: blur(0); }
+  100% { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; visibility: hidden; }
+}
+
+/* === Floating Corner Logo === */
+.corner-logo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 20;
+  opacity: 0.85;
+  transition: all 0.3s ease;
+}
+.corner-logo:hover {
+  opacity: 1;
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 8px var(--accent));
+}
